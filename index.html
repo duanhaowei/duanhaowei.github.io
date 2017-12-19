@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+  <meta name="viewport"
+        content="width=device-width,initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, minimal-ui, user-scalable=no">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black">
+  <meta name="format-detection" content="telephone=no">
+  <title></title>
+  <!-- <link rel="stylesheet" href="#"> -->
+  <style type="text/css">
+    * {
+      margin: 0;
+      padding: 0;
+      -webkit-box-sizing: border-box;
+      -moz-box-sizing: border-box;
+      box-sizing: border-box;
+    }
+
+    html {
+      height: 100%
+    }
+
+    body {
+      height: 100%;
+      margin: 0px;
+      padding: 0px
+    }
+
+    .iconList {
+      /*background-color: #af9734;*/
+      width: 80vw;
+      height: 100vh;
+      margin-left: 10vw;
+      text-align: center;
+      display: flex;
+      flex-direction: row;
+      justify-content: center;
+      align-items: center;
+      flex-wrap: wrap;
+      align-content: center;
+    }
+
+    .iconList a {
+      height: 80px;
+      width: 80px;
+      margin: 10px;
+      line-height: 80px;
+      border-radius: 20%;
+      background-color: #f0daa0;
+      display: inline-block;
+      text-decoration: none;
+      color: #af4f00;
+    }
+
+    .iconList a:hover {
+      margin-top: -10px;
+      background-color: #f0c27b;
+      color: #af0058;
+    }
+
+    h1 {
+      position: absolute;
+      text-align: center;
+      width: 100%;
+    }
+    
+    /* C:\Users\duanhaowei\AppData\Local\Google\Chrome\User Data\Default */
+  </style>
+</head>
+<body>
+<h1>数字化项目调用exe示例</h1>
+<div class="iconList">
+  <a href="leedarsonapp://message?appName=PHOTOSHOP">PS</a>
+  <a href="leedarsonapp://message?appName=EXCEL">EXCEL</a>
+  <a href="leedarsonapp://message?appName=WORD">WORD</a>
+  <a href="leedarsonapp://message?appName=WPS">WPS</a>
+  <a href="leedarsonapp://message?appName=WPP">WPP</a>
+  <a href="leedarsonapp://message?appName=FOXMAIL">FOX Mail</a>
+  <a href="leedarsonapp://message?appName=OUTLOOK">OUTLOOK</a>
+  <a id="customIcon" href="javascript:void(0)">自定义</a>
+</div>
+<script type="text/javascript">
+
+  function setCustomerUrl() {
+
+    let c = document.querySelector("#customIcon");
+    //alert(window.customUrl);
+    if (!window.customUrl) {
+      window.customUrl = prompt('请输入exe路径', '');
+      if (window.customUrl === '') {
+        return null;
+      }
+    } else {
+      location.href = "leedarsonapp://message?appName=CUSTOM&openPath=" + window.customUrl;
+//      location.href = window.customUrl;
+    }
+
+  }
+
+  document.querySelector("#customIcon").addEventListener('click', setCustomerUrl, false);
+
+</script>
+</body>
+</html>
