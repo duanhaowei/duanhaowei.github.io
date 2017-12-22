@@ -1,0 +1,193 @@
+html,body{
+	margin:0;
+	padding:0;
+	height:100%;
+	width: 100%;
+	overflow:hidden;
+	cursor:none;
+	background:url(../img/fu1.jpg)  no-repeat;
+	background-size:100% 100%;
+	}
+#chalkboard{
+	position:absolute;
+	top:0;
+	left:0;
+	width:100%;
+	height:100%;
+	z-index:1;
+	cursor:none;
+
+	}
+.chalk{
+	width:40px;
+	height:50px;
+	background:url(../img/pan.png)  no-repeat;
+	background-size:100% 100%;
+	position:absolute;
+	padding:0;
+	margin:0;
+	bottom:0;
+	left:0;
+	cursor:none;
+	z-index:2;
+	}
+.eraser{
+	width: 50px;
+	height: 100px;
+	margin-top: -50px;
+	margin-left: -25px;
+	background: #999;
+	border-radius: 5px;
+	box-shadow: inset 0 0 10px #545445;
+}
+.panel{
+	display: block;
+	width: 80%;
+	font-size: 18px;
+	color: red;
+	font-family: sans-serif;
+	position:absolute;
+	margin:0 2em 1em 2em;
+	bottom:0;
+	left:0;
+	z-index:5;
+}
+.panel a{
+	height: 45px;
+	width: 100%;
+	display: inline-block;
+	text-decoration: none;
+/*	cursor: pointer;*/
+	opacity: 0.7;
+	margin-right: 0.5em;
+}
+/*.panel a:hover{
+	opacity: 1;
+}*/
+.showImg{
+	position:absolute;
+	top:0;
+	left:0;
+	width:100%;
+	height:100%;
+	z-index:2;
+	cursor:none;
+	animation:myfirst 5s;
+	-webkit-animation: myfirst 5s;
+	transform:rotate(180deg) scale(0.7);
+}
+.fu{
+	position:absolute;
+	top:0;
+	left:0;
+	z-index:1;
+	cursor:none;
+/*	transform:rotate(45deg);*/
+	background:url(../img/fang.png)  no-repeat;
+	background-size:100% 100%;
+	transform:rotate(180deg);
+	animation:mySecond 5s;
+	-webkit-animation: mySecond 5s;
+}
+.juanzhou{
+	display: none;
+	margin: 15px 0;
+	position: relative;
+/*	width: 100%;*/
+	left:5%;
+	z-index:1;
+	cursor:none;
+/*	background:url(../img/juanzhou.png)  no-repeat;
+	background-size:100% 100%;*/
+
+}
+
+.juanzhou .left_zhou{
+
+	transition: transform 2s ease-in-out;
+	position: absolute;
+	transform:translateX(0px);
+	z-index:3;
+	width:7.5%;
+	height:100%;
+	background: url("../img/zhou.png") no-repeat right 0;
+	background-size:100% 100%;
+}
+
+.juanzhou .right_zhou{
+	transition: transform 2s ease-in-out ;
+	position: absolute;
+	transform:translateX(0px);
+	z-index: 3;
+	width:7.5%;
+	*width:7.5%;
+	height:100%;
+	background: url("../img/zhou.png") no-repeat left 0;
+	background-size:100% 100%;
+
+}
+.juanzhou .body_juanzhouL{
+	transition: transform 2s ease-in-out ,width  2s ease-in-out;
+	width: 0px;
+	position: absolute;
+	transform:translateX(5px);
+	top: 5px;
+	z-index: 2;
+	height:90%;
+	background: url("../img/jzbg1.png") right 0 no-repeat;
+	background-size:100% 100%;
+
+}
+.juanzhou .body_juanzhouR{
+	transition: transform 2s ease-in-out,width  2s ease-in-out;
+	width: 0px;
+	position: absolute;
+	transform:translateX(-5px);
+	top: 5px;
+	z-index: 2;
+	height:90%;
+	background: url("../img/jzbg2.png") right 0 no-repeat;
+	background-size:100% 100%;
+
+}
+.juanzhou .main-index {
+	transition:opacity 2s ease-in-out;
+	display: none;
+	opacity: 0;
+	overflow: hidden;
+	zoom: 1;
+	position: absolute;
+	z-index: 5;
+	width:100%;
+	height:100%;
+
+
+}
+.juanzhou .main-index  p{
+	color: #0f0f0f;
+	left: 15%;
+	position: absolute;
+}
+.juanzhou .main-index  p b{
+	font-weight:800;
+	font-size: 20px;
+}
+
+
+
+
+@keyframes mySecond{
+	0% {transform:rotate(0);}
+	100% {transform:rotate(180deg);}
+}
+
+@keyframes myfirst
+{
+
+	0% {transform:scale(1) rotate(0);}
+	100% {transform:scale(0.7) rotate(180deg);}
+
+
+
+}
+
